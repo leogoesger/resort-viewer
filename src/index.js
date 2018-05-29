@@ -1,8 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css';
+import {render} from 'react-dom';
+import {ConnectedRouter} from 'react-router-redux';
+import {Provider} from 'react-redux';
+import configureStore, {history} from './store/configureStore';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const target = document.querySelector('#root');
+
+const store = configureStore();
+
+render(
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
+  </Provider>,
+  target
+);

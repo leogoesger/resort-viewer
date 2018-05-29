@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Uploader from '../components/Uploader';
+import Uploader from '../components/uploader/Uploader';
 
 const UploaderHOC = dataProcessor => {
   return class EnhancedUploader extends React.PureComponent {
@@ -19,8 +19,9 @@ const UploaderHOC = dataProcessor => {
       reader.onerror = e => this.errorHandler(e);
     }
 
-    fileReadingFinished(event) {
-      dataProcessor(event.target.result);
+    async fileReadingFinished(event) {
+      const resorts = await dataProcessor(event.target.result);
+      this.props.uploadResorts(resorts);
     }
 
     errorHandler(event) {

@@ -1,11 +1,11 @@
 import React from 'react';
-import EnhancedUploader from '../containers/EnhancedUploader';
+import Uploader from '../../containers/Uploader';
 
 const Home = () => (
   <div>
     <h1>Home</h1>
     <div>
-      <EnhancedUploader />
+      <Uploader />
     </div>
   </div>
 );

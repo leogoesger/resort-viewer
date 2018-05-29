@@ -1,29 +1,17 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
-import SummaryTable from './containers/EnhancedTable';
-import Home from './components/Home';
-
-const NavBar = () => (
-  <ul>
-    <li>
-      <NavLink to="/">Home</NavLink>
-    </li>
-    <li>
-      <NavLink to="/resorts">Resort</NavLink>
-    </li>
-  </ul>
-);
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Summary from './containers/Summary';
+import Home from './components/home/Home';
+import Navbar from './containers/Navbar';
 
 const App = () => (
-  <div>
-    <Router>
-      <React.Fragment>
-        <NavBar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/resorts" component={SummaryTable} />
-      </React.Fragment>
-    </Router>
-  </div>
+  <Router>
+    <React.Fragment>
+      <Navbar />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/summary" component={Summary} />
+    </React.Fragment>
+  </Router>
 );
 
 export default App;

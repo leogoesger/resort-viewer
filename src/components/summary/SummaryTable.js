@@ -20,12 +20,13 @@ const SummaryTable = ({tableItems, columnNames}) => {
       <TableBody>
         {tableItems.map(item => {
           return (
-            <TableRow hover key={item.id}>
-              <TableCell>{item.id}</TableCell>
-              <TableCell>{item.name}</TableCell>
-              <TableCell>{item.acre}</TableCell>
-              <TableCell>{item.url}</TableCell>
-              <TableCell>{item.price}</TableCell>
+            <TableRow hover key={item.name}>
+              {columnNames.map((column, i) => {
+                console.log(i);
+                return (
+                  <TableCell key={`${item}${i}`}>{item[column]}</TableCell>
+                );
+              })}
             </TableRow>
           );
         })}
