@@ -21,6 +21,13 @@ const updateAttributeMapObject = maps => {
   };
 };
 
+const updateErrorObject = error => {
+  return {
+    type: types.UPDATE_RESORT_ERROR_OBJECT,
+    error,
+  };
+};
+
 export function uploadResorts(resorts) {
   return dispatch => {
     try {
@@ -48,5 +55,11 @@ export function updateAttributeMap(maps) {
     } catch (e) {
       throw e;
     }
+  };
+}
+
+export function getErrorMessage(error) {
+  return dispatch => {
+    dispatch(updateErrorObject(error));
   };
 }

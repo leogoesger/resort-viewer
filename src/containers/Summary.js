@@ -7,16 +7,14 @@ import Layout from '../components/summary/Layout';
 
 class Summary extends React.PureComponent {
   render() {
-    if (!this.props.resorts.length) {
-      return null;
-    }
-    return <Layout resorts={this.props.resorts} />;
+    return <Layout resorts={this.props.resorts} mapping={this.props.mapping} />;
   }
 }
 
 const mapStateToProps = state => {
   return {
     resorts: state.resort.resorts,
+    mapping: state.resort.mapping,
   };
 };
 

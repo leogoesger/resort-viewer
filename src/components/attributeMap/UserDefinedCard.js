@@ -1,4 +1,5 @@
 import React from 'react';
+// import {lifecycle} from 'recompose';
 import {keys, lensProp, set, curry} from 'ramda';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';

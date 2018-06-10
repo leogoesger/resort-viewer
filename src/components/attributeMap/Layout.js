@@ -1,24 +1,30 @@
 import React from 'react';
-import {zipObj} from 'ramda';
-import {withState, withHandlers, compose} from 'recompose';
+import PropTypes from 'prop-types';
+import {keys, zipObj, curry} from 'ramda';
+import {task} from 'folktale/concurrency/task';
+import {withState, withHandlers, compose, setPropTypes} from 'recompose';
+import Button from '@material-ui/core/Button';
 
+import {createEmptyMap, navigateTo} from '../../utils/helpers';
+import {predefinedAttributes} from '../../utils/constants';
 import AttributeMapOverview from './AttributeMapOverview';
 import PredefinedCard from './PredefinedCard';
 import UserDefinedCard from './UserDefinedCard';
 
-const predefinedAttributes = [
-  'Name',
-  'Url',
-  'Trail Map Url',
-  'Logo Url',
-  'Address',
-  'Phone',
-  'Hours Of Operation',
-  'Lifts',
-  'Trails',
-  'Acres',
-  'Terrain Park',
-];
+const compareAttributes = curry((userDefinedAttributes, mapping) => {
+  const newMapValues = keys(mapping).map(
+    (key, index) => (mapping[key] ? mapping[key] : userDefinedAttributes[index])
+  );
+  return zipObj(keys(mapping), newMapValues);
+});
+
+const _navigateTo = (location, newMapping, updateAttributeMap) => {
+  return task(res => {
+    navigateTo('/summary');
+    debugger;
+    res.resolve(updateAttributeMap(newMapping));
+  });
+};
 
 const Layout = ({
   uploadedAttributes,
@@ -26,6 +32,7 @@ const Layout = ({
   onChange,
   mapping,
 }) => {
+  const compareWithInitAttributes = compareAttributes(uploadedAttributes);
   return (
     <div>
       <AttributeMapOverview />
@@ -37,13 +44,22 @@ const Layout = ({
           onChange={d => onChange(d)}
         />
       </div>
+
+      <Button
+        variant="raised"
+        color="primary"
+        onClick={() =>
+          _navigateTo(
+            '/summary',
+            compareWithInitAttributes(mapping),
+            updateAttributeMap
+          ).run()
+        }
+      >
+        Continue
+      </Button>
     </div>
   );
-};
-
-const createEmptyMap = (attributes, props) => {
-  const arr = new Array(attributes.length).fill('');
-  return zipObj(attributes, arr);
 };
 
 const styles = {
@@ -60,6 +76,10 @@ const enhance = compose(
   ),
   withHandlers({
     onChange: props => data => props.setMapping(data),
+  }),
+  setPropTypes({
+    uploadedAttributes: PropTypes.array.isRequired,
+    updateAttributeMap: PropTypes.func.isRequired,
   })
 );
 

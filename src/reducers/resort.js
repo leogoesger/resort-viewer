@@ -7,7 +7,7 @@ const initialState: STATE = {
   resorts: [],
   resort: null,
   error: null,
-  mapping: null,
+  mapping: {},
 };
 
 export default function(state: STATE = initialState, action: ACTION) {
@@ -19,7 +19,10 @@ export default function(state: STATE = initialState, action: ACTION) {
       return {...state, resort: action.resort};
 
     case types.UPDATE_ATTRIBUTE_MAP:
-      return {...state, mapping: action.mapping};
+      return {...state, mapping: action.maps};
+
+    case types.UPDATE_RESORT_ERROR_OBJECT:
+      return {...state, error: action.error};
 
     default:
       return state;

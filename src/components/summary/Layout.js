@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import SummaryTable from './SummaryTable';
+import {predefinedAttributes} from '../../utils/constants';
 
 const Layout = props => {
-  return (
+  return props.resorts.length ? (
     <SummaryTable
       tableItems={props.resorts}
-      columnNames={Object.keys(props.resorts[0])}
+      columnNames={predefinedAttributes}
+      mapping={props.mapping}
     />
+  ) : (
+    <div>Upload csv from the homepage!</div>
   );
 };
 
@@ -15,4 +20,5 @@ export default Layout;
 
 Layout.propTypes = {
   resorts: PropTypes.array.isRequired,
+  mapping: PropTypes.object.isRequired,
 };
