@@ -15,17 +15,32 @@ const Layout = () => (
       }}
     >
       <div>
-        <NavLink aria-current="page" className="navLinks" to="/">
+        <NavLink
+          ariaCurrent="true"
+          aria-current="page"
+          className="navLinks"
+          to="/"
+        >
           Upload
         </NavLink>
       </div>
       <div>
-        <NavLink aria-current="page" className="navLinks" to="/resorts">
+        <NavLink
+          ariaCurrent="true"
+          aria-current="page"
+          className="navLinks"
+          to="/resorts"
+        >
           Resorts
         </NavLink>
       </div>
       <div>
-        <NavLink aria-current="page" className="navLinks" to="/about">
+        <NavLink
+          ariaCurrent="true"
+          aria-current="page"
+          className="navLinks"
+          to="/about"
+        >
           About
         </NavLink>
       </div>
