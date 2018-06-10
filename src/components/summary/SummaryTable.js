@@ -9,26 +9,42 @@ import TableCell from '@material-ui/core/TableCell';
 
 const SummaryTable = ({tableItems, columnNames, mapping}) => {
   return (
-    <Table>
-      <TableHead>
-        <TableRow>
-          {columnNames.map(column => (
-            <TableCell key={column}>{column}</TableCell>
-          ))}
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {tableItems.map(item => (
-          <TableRow hover key={item.NAME} onClick={() => console.log('here')}>
-            {columnNames.map((column, i) => (
-              <TableCell key={`${item.NAME}${i}`}>
-                {item[mapping[column]]}
-              </TableCell>
-            ))}
+    <div style={{width: '80%', margin: '20px auto', overflow: 'scroll'}}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            {columnNames.map(
+              column =>
+                column.toLowerCase().includes('url') ? null : (
+                  <TableCell key={column}>{column}</TableCell>
+                )
+            )}
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHead>
+        <TableBody>
+          {tableItems.map(item => (
+            <TableRow hover key={item.NAME}>
+              {columnNames.map(
+                (column, i) =>
+                  column.toLowerCase().includes('url') ? null : (
+                    <TableCell key={`${item.NAME}${i}`}>
+                      <span
+                        style={{
+                          width: column.includes('Address') ? '120px' : 'none',
+                          overflow: 'hidden',
+                          display: 'block',
+                        }}
+                      >
+                        {item[mapping[column]]}
+                      </span>
+                    </TableCell>
+                  )
+              )}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   );
 };
 

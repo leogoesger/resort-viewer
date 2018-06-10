@@ -20,8 +20,7 @@ const compareAttributes = curry((userDefinedAttributes, mapping) => {
 
 const _navigateTo = (location, newMapping, updateAttributeMap) => {
   return task(res => {
-    navigateTo('/summary');
-    debugger;
+    navigateTo('/resorts');
     res.resolve(updateAttributeMap(newMapping));
   });
 };
@@ -34,7 +33,7 @@ const Layout = ({
 }) => {
   const compareWithInitAttributes = compareAttributes(uploadedAttributes);
   return (
-    <div>
+    <div style={{margin: '20px auto', width: '80%'}}>
       <AttributeMapOverview />
       <div style={styles.panels}>
         <PredefinedCard predefinedAttributes={predefinedAttributes} />
@@ -50,7 +49,7 @@ const Layout = ({
         color="primary"
         onClick={() =>
           _navigateTo(
-            '/summary',
+            '/resorts',
             compareWithInitAttributes(mapping),
             updateAttributeMap
           ).run()
@@ -64,7 +63,6 @@ const Layout = ({
 
 const styles = {
   panels: {
-    width: '86%',
     display: 'flex',
     justifyContent: 'space-around',
   },

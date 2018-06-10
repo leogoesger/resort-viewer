@@ -2,6 +2,7 @@
   "name": "resort-viewer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://leogoesger.github.io/resort-viewer",
   "dependencies": {
     "@material-ui/core": "^1.1.0",
     "@material-ui/icons": "^1.1.0",
@@ -29,6 +30,7 @@
     "file-loader": "1.1.5",
     "folktale": "^2.1.0",
     "fs-extra": "3.0.1",
+    "gh-pages": "^1.2.0",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -60,6 +62,8 @@
     "react-hot-loader": "3.0.0-beta.6"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"

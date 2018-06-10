@@ -12,7 +12,11 @@ const Layout = props => {
       mapping={props.mapping}
     />
   ) : (
-    <div>Upload csv from the homepage!</div>
+    <div style={{width: '80%', margin: '20px auto'}}>
+      {
+        'Looks like you have not uploaded any data yet. Make sure to upload csv from the Upload page first!'
+      }
+    </div>
   );
 };
 
