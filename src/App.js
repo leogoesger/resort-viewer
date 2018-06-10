@@ -9,22 +9,15 @@ import Summary from './containers/Summary';
 import AttributeMap from './containers/AttributeMap';
 import Theme from './styles/Theme';
 
-const App = ({publicUrl}) => {
-  return (
-    <MuiThemeProvider theme={Theme}>
-      <Navbar />
-      <Footer />
-      <Switch>
-        <Route exact path={publicUrl + '/'} component={Home} />
-        <Route exact path={publicUrl + '/resorts'} component={Summary} />
-        <Route
-          exact
-          path={publicUrl + '/attributeMap'}
-          component={AttributeMap}
-        />
-      </Switch>
-    </MuiThemeProvider>
-  );
-};
-
+const App = () => (
+  <MuiThemeProvider theme={Theme}>
+    <Navbar />
+    <Footer />
+    <Switch>
+      <Route exact path={'/'} component={Home} />
+      <Route exact path={'/resorts'} component={Summary} />
+      <Route exact path={'/attributeMap'} component={AttributeMap} />
+    </Switch>
+  </MuiThemeProvider>
+);
 export default App;

@@ -10,16 +10,10 @@ const target = document.querySelector('#root');
 
 const store = configureStore();
 
-const getPublicUrl = env => () => {
-  return process.env.NODE_ENV === env
-    ? process.env.REACT_APP_LOCAL_URL
-    : process.env.REACT_APP_PUBLIC_URL;
-};
-
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <App publicUrl={getPublicUrl('development')()} />
+      <App />
     </ConnectedRouter>
   </Provider>,
   target
