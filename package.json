@@ -30,6 +30,7 @@
     "folktale": "^2.1.0",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
+    "http": "^0.0.0",
     "jest": "20.0.4",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
