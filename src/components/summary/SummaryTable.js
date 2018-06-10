@@ -9,7 +9,7 @@ import TableCell from '@material-ui/core/TableCell';
 
 const SummaryTable = ({tableItems, columnNames, mapping}) => {
   return (
-    <div style={{width: '80%', margin: '20px auto', overflow: 'scroll'}}>
+    <div style={{width: '80%', margin: '40px auto', overflow: 'scroll'}}>
       <Table>
         <TableHead>
           <TableRow>

@@ -6,6 +6,10 @@ import {compose, setPropTypes} from 'recompose';
 import Layout from '../components/summary/Layout';
 
 class Summary extends React.PureComponent {
+  componentDidMount() {
+    document.title = 'UpMetric | Resorts';
+  }
+
   render() {
     return <Layout resorts={this.props.resorts} mapping={this.props.mapping} />;
   }
@@ -19,7 +23,10 @@ const mapStateToProps = state => {
 };
 
 const composer = compose(
-  connect(mapStateToProps, null),
+  connect(
+    mapStateToProps,
+    null
+  ),
   setPropTypes({resorts: PropTypes.array.isRequired})
 );
 

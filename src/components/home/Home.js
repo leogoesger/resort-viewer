@@ -2,7 +2,9 @@ import React from 'react';
 import Uploader from '../../containers/Uploader';
 
 const Home = () => (
-  <div style={{width: '80%', margin: '0 auto', justifyContent: 'space-around'}}>
+  <div
+    style={{width: '80%', margin: '40px auto', justifyContent: 'space-around'}}
+  >
     <div>
       <h1>UpMetric Resort Viewer</h1>
       <p>

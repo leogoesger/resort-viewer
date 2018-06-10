@@ -8,6 +8,10 @@ import {updateAttributeMap} from '../actions/resort';
 import Layout from '../components/attributeMap/Layout';
 
 class AttributeMap extends React.PureComponent {
+  componentDidMount() {
+    document.title = 'UpMetric | Mapping';
+  }
+
   getUploadedAttributes(resorts) {
     return keys(head(resorts));
   }
@@ -35,7 +39,10 @@ const mapStateToProps = state => {
 };
 
 const composer = compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ),
   setPropTypes({
     resorts: PropTypes.array.isRequired,
     updateAttributeMap: PropTypes.func.isRequired,
