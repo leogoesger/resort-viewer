@@ -37,6 +37,7 @@
     "jest": "20.0.4",
     "mocha": "^5.2.0",
     "nightmare": "^3.0.1",
+    "pm2": "^2.10.4",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
