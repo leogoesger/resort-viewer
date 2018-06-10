@@ -11,7 +11,7 @@ describe('Load a Page', function() {
   describe('/ (Pages)', () => {
     it('upload page should load without error', done => {
       nightmare
-        .goto('https://resort-viewer.herokuapp.com/')
+        .goto('http://localhost:3000/')
         .end()
         .then(function(result) {
           done();
@@ -20,7 +20,7 @@ describe('Load a Page', function() {
     });
     it('about page should load without error', done => {
       nightmare
-        .goto('https://resort-viewer.herokuapp.com/about')
+        .goto('http://localhost:3000/about')
         .end()
         .then(function(result) {
           done();
@@ -29,7 +29,7 @@ describe('Load a Page', function() {
     });
     it('restore page should load without error', done => {
       nightmare
-        .goto('https://resort-viewer.herokuapp.com/resorts')
+        .goto('http://localhost:3000/resorts')
         .end()
         .then(function(result) {
           done();
