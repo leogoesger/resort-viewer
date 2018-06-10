@@ -12,24 +12,19 @@ const SummaryTable = ({tableItems, columnNames}) => {
     <Table>
       <TableHead>
         <TableRow>
-          {columnNames.map(column => {
-            return <TableCell key={column}>{column}</TableCell>;
-          })}
+          {columnNames.map(column => (
+            <TableCell key={column}>{column}</TableCell>
+          ))}
         </TableRow>
       </TableHead>
       <TableBody>
-        {tableItems.map(item => {
-          return (
-            <TableRow hover key={item.name}>
-              {columnNames.map((column, i) => {
-                console.log(i);
-                return (
-                  <TableCell key={`${item}${i}`}>{item[column]}</TableCell>
-                );
-              })}
-            </TableRow>
-          );
-        })}
+        {tableItems.map(item => (
+          <TableRow hover key={item.NAME} onClick={() => console.log('here')}>
+            {columnNames.map((column, i) => (
+              <TableCell key={`${item.NAME}${i}`}>{item[column]}</TableCell>
+            ))}
+          </TableRow>
+        ))}
       </TableBody>
     </Table>
   );

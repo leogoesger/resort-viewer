@@ -6,8 +6,11 @@ import {compose, setPropTypes} from 'recompose';
 import UploaderHOC from '../hocs/UploaderHOC';
 import {uploadResorts} from '../actions/resort';
 
-const stringProcessor = csvStr => {
-  return csv({}).fromString(csvStr);
+const stringProcessor = (csvStr, cb) => {
+  csv({})
+    .fromString(csvStr)
+    .on('err', err => cb(err, null))
+    .then(csvRows => cb(null, csvRows));
 };
 
 const Uploader = UploaderHOC(stringProcessor);

@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import {ConnectedRouter} from 'react-router-redux';
 import {Provider} from 'react-redux';
 import configureStore, {history} from './store/configureStore';
+import './styles/styles.css';
 import App from './App';
 
 const target = document.querySelector('#root');

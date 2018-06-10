@@ -1,17 +1,20 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Summary from './containers/Summary';
-import Home from './components/home/Home';
+import {Switch, Route} from 'react-router-dom';
+
 import Navbar from './containers/Navbar';
+import Home from './components/home/Home';
+import Summary from './containers/Summary';
+import AttributeMap from './containers/AttributeMap';
 
 const App = () => (
-  <Router>
-    <React.Fragment>
-      <Navbar />
+  <React.Fragment>
+    <Navbar />
+    <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/summary" component={Summary} />
-    </React.Fragment>
-  </Router>
+      <Route exact path="/attributeMap" component={AttributeMap} />
+    </Switch>
+  </React.Fragment>
 );
 
 export default App;

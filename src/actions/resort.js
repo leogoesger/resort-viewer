@@ -14,6 +14,13 @@ const getResortObject = resort => {
   };
 };
 
+const updateAttributeMapObject = maps => {
+  return {
+    type: types.UPDATE_ATTRIBUTE_MAP,
+    maps,
+  };
+};
+
 export function uploadResorts(resorts) {
   return dispatch => {
     try {
@@ -28,6 +35,16 @@ export function getResort(resort) {
   return dispatch => {
     try {
       dispatch(getResortObject(resort));
+    } catch (e) {
+      throw e;
+    }
+  };
+}
+
+export function updateAttributeMap(maps) {
+  return dispatch => {
+    try {
+      dispatch(updateAttributeMapObject(maps));
     } catch (e) {
       throw e;
     }
