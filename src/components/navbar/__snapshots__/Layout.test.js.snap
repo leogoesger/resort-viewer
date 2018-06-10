@@ -25,6 +25,7 @@ exports[`<Layout /> Render Layout 1`] = `
     <div>
       <NavLink
         activeClassName="active"
+        aria-current="page"
         ariaCurrent="true"
         className="navLinks"
         to="/"
@@ -35,6 +36,7 @@ exports[`<Layout /> Render Layout 1`] = `
     <div>
       <NavLink
         activeClassName="active"
+        aria-current="page"
         ariaCurrent="true"
         className="navLinks"
         to="/resorts"
@@ -45,6 +47,7 @@ exports[`<Layout /> Render Layout 1`] = `
     <div>
       <NavLink
         activeClassName="active"
+        aria-current="page"
         ariaCurrent="true"
         className="navLinks"
         to="/about"
