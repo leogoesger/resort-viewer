@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Uploader /> Render Uploader 1`] = `
+<WithStyles(Button)
+  color="primary"
+  component="label"
+  variant="raised"
+>
+  Upload
+  <input
+    onChange={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    type="file"
+  />
+</WithStyles(Button)>
+`;

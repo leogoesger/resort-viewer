@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> Render Layout 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#eeeeee",
+      "height": "60px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "color": "#757575",
+        "display": "flex",
+        "fontSize": "18px",
+        "justifyContent": "space-around",
+        "margin": "0px auto",
+        "paddingTop": "18px",
+        "width": "80%",
+      }
+    }
+  >
+    <div>
+      <NavLink
+        activeClassName="active"
+        ariaCurrent="true"
+        className="navLinks"
+        to="/"
+      >
+        Upload
+      </NavLink>
+    </div>
+    <div>
+      <NavLink
+        activeClassName="active"
+        ariaCurrent="true"
+        className="navLinks"
+        to="/resorts"
+      >
+        Resorts
+      </NavLink>
+    </div>
+    <div>
+      <NavLink
+        activeClassName="active"
+        ariaCurrent="true"
+        className="navLinks"
+        to="/about"
+      >
+        About
+      </NavLink>
+    </div>
+  </div>
+</div>
+`;

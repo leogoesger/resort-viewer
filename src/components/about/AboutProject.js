@@ -5,7 +5,7 @@ const AboutProject = () => (
     <h1>About this project</h1>
     <p>
       {
-        'The focus for starting this project is to learn more about functional programming by using libraries like folktale and recomopse. Therefore, some part of the application could have been done easier with just Javascript. Looking through the code, you will see many implementation of HOCs using Recompose for code reusebility and Folktale for managing side effects.'
+        'The focus for starting this project is to learn more about functional programming by using libraries like folktale and recomopse. Therefore, some part of the application could have been done much easier without a library. Looking through the code, you will see many implementation of HOCs using Recompose for code reusebility and Folktale for managing side effects.'
       }
     </p>
     <h3>Completed:</h3>
@@ -31,7 +31,7 @@ const AboutProject = () => (
         }
       </li>
       <li>{'Tests: e2e test and jest'}</li>
-      <li>{'CI: Jenkins'}</li>
+      <li>{'CI: Travis'}</li>
     </ul>
     <a
       className="social-links"
