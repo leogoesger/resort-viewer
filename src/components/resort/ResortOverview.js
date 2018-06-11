@@ -8,7 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import ImageDialog from '../shared/ImageDialog';
 import {navigateTo} from '../../utils/helpers';
 
-const ResortOverview = ({resort, mapping, getNextResort}) => (
+const ResortOverview = ({resort, mapping, getNextResort, getPrevResort}) => (
   <div
     style={{
       width: '80%',
@@ -40,9 +40,14 @@ const ResortOverview = ({resort, mapping, getNextResort}) => (
         >
           {'Back'}
         </Button>
-        <Button size="small" color="primary" onClick={() => getNextResort()}>
-          {'Next'}
-        </Button>
+        <div>
+          <Button size="small" color="primary" onClick={() => getPrevResort()}>
+            {'Prev'}
+          </Button>
+          <Button size="small" color="primary" onClick={() => getNextResort()}>
+            {'Next'}
+          </Button>
+        </div>
       </div>
 
       <CardContent style={{paddingTop: '0px'}}>
@@ -91,6 +96,7 @@ const enhancer = compose(
     resort: PropTypes.object.isRequired,
     mapping: PropTypes.object.isRequired,
     getNextResort: PropTypes.func.isRequired,
+    getPrevResort: PropTypes.func.isRequired,
   })
 );
 export default enhancer(ResortOverview);

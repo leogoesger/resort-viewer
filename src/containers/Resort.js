@@ -21,6 +21,15 @@ class Resort extends React.PureComponent {
       : this.props.getResort(resorts[index + 1]);
   }
 
+  getPrevResort(resort, resorts, mapping) {
+    const index = resorts.findIndex(
+      r => r[mapping['Name']] === resort[mapping['Name']]
+    );
+    return index === 0
+      ? this.props.getResort(resorts[resorts.length - 1])
+      : this.props.getResort(resorts[index - 1]);
+  }
+
   render() {
     const {resort, resorts, mapping} = this.props;
     if (!Object.keys(resort).length) {
@@ -38,6 +47,7 @@ class Resort extends React.PureComponent {
         resort={resort}
         mapping={mapping}
         getNextResort={() => this.getNextResort(resort, resorts, mapping)}
+        getPrevResort={() => this.getPrevResort(resort, resorts, mapping)}
       />
     );
   }
