@@ -8,7 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import ImageDialog from '../shared/ImageDialog';
 import {navigateTo} from '../../utils/helpers';
 
-const ResortOverview = ({resort, mapping}) => (
+const ResortOverview = ({resort, mapping, getNextResort}) => (
   <div
     style={{
       width: '80%',
@@ -25,7 +25,14 @@ const ResortOverview = ({resort, mapping}) => (
       />
     </div>
     <Card style={{width: '70%', height: '600px'}}>
-      <div style={{marginLeft: '20px', marginTop: '20px'}}>
+      <div
+        style={{
+          width: '90%',
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: '20px auto 0px auto',
+        }}
+      >
         <Button
           size="small"
           color="primary"
@@ -33,9 +40,12 @@ const ResortOverview = ({resort, mapping}) => (
         >
           {'Back'}
         </Button>
+        <Button size="small" color="primary" onClick={() => getNextResort()}>
+          {'Next'}
+        </Button>
       </div>
 
-      <CardContent>
+      <CardContent style={{paddingTop: '0px'}}>
         <h1>
           <a
             target="_blank"
@@ -68,7 +78,7 @@ const ResortOverview = ({resort, mapping}) => (
         }}
       >
         <ImageDialog
-          buttonText={'See A Trail Map'}
+          buttonText={'See Trail Map'}
           imageUrl={resort[mapping['Trail Map Url']]}
         />
       </div>
@@ -80,6 +90,7 @@ const enhancer = compose(
   setPropTypes({
     resort: PropTypes.object.isRequired,
     mapping: PropTypes.object.isRequired,
+    getNextResort: PropTypes.func.isRequired,
   })
 );
 export default enhancer(ResortOverview);

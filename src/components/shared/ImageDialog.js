@@ -13,7 +13,12 @@ const ImageDialog = ({
   handleClose,
 }) => (
   <div>
-    <Button size="small" color="primary" onClick={handleClickOpen}>
+    <Button
+      variant="raised"
+      size="small"
+      color="primary"
+      onClick={handleClickOpen}
+    >
       {buttonText}
     </Button>
     <Dialog open={open} onClose={handleClose} fullWidth={true} maxWidth={'md'}>
