@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import SummaryTable from './SummaryTable';
 import {predefinedAttributes} from '../../utils/constants';
 
-const Layout = props => {
-  return props.resorts.length ? (
+const Layout = ({resorts, mapping, getResort}) => {
+  return resorts.length ? (
     <SummaryTable
-      tableItems={props.resorts}
+      tableItems={resorts}
       columnNames={predefinedAttributes}
-      mapping={props.mapping}
+      mapping={mapping}
+      getResort={r => getResort(r)}
     />
   ) : (
     <div style={{width: '80%', margin: '40px auto'}}>
@@ -25,4 +26,5 @@ export default Layout;
 Layout.propTypes = {
   resorts: PropTypes.array.isRequired,
   mapping: PropTypes.object.isRequired,
+  getResort: PropTypes.func.isRequired,
 };

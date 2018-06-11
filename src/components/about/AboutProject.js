@@ -12,7 +12,7 @@ const AboutProject = () => (
     <ul>
       <li>
         {
-          'Using HOC for upload: This will give flexibility for future different parsing algo. This can also benefit uploading other type of files like xml and etc. Since upload is considered a side effect, I used task from folktale to keep the function pure.'
+          'Using HOC for uploads: This will give flexibility for future different parsing algo. This can also benefit uploading other type of files like xml and etc. Since upload is considered a side effect, I used task from folktale to keep the function pure.'
         }
       </li>
       <li>
@@ -30,8 +30,23 @@ const AboutProject = () => (
           "Resort display: Demoing React's composition. Container -> Layout -> (components ...)"
         }
       </li>
-      <li>{'Tests: e2e test and jest'}</li>
+      <li>
+        {
+          'Tests: e2e test with nightmare and jest for spec testing using Jest(matchsnapshot)'
+        }
+      </li>
       <li>{'CI: Travis'}</li>
+    </ul>
+    <h3>{'Can be done:'}</h3>
+    <ul>
+      <li>{'Map: Add mapbox to display all ski resorts'}</li>
+      <li>
+        {
+          'Images are loading really slow. We can clean up those images and serve compressed images. Or we can combine all logo into one image, and use css to get current logo from that image.'
+        }
+      </li>
+      <li>{'Option to upload any amount of fields.'}</li>
+      <li>{'Sorting'}</li>
     </ul>
     <a
       className="social-links"

@@ -6,6 +6,7 @@ import {compose, setPropTypes} from 'recompose';
 
 import {updateAttributeMap} from '../actions/resort';
 import Layout from '../components/attributeMap/Layout';
+import Error from './Error';
 
 class AttributeMap extends React.PureComponent {
   componentDidMount() {
@@ -17,6 +18,9 @@ class AttributeMap extends React.PureComponent {
   }
 
   render() {
+    if (!this.props.resorts.length) {
+      return <Error message={'Try upload some data first!'} />;
+    }
     return (
       <Layout
         uploadedAttributes={this.getUploadedAttributes(this.props.resorts)}

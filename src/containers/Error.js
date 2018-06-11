@@ -7,7 +7,7 @@ import Layout from '../components/error/Layout';
 
 class Error extends React.PureComponent {
   render() {
-    return <Layout resortError={this.props.resortError} />;
+    return <Layout message={this.props.message} />;
   }
 }
 
@@ -18,9 +18,13 @@ const mapStateToProps = state => {
 };
 
 const enhancer = compose(
-  connect(mapStateToProps, null),
+  connect(
+    mapStateToProps,
+    null
+  ),
   setPropTypes({
     resortError: PropTypes.string.isRequired,
+    message: PropTypes.string,
   })
 );
 

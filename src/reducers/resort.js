@@ -5,8 +5,8 @@ type ACTION = {};
 
 const initialState: STATE = {
   resorts: [],
-  resort: null,
-  error: null,
+  resort: {},
+  error: '',
   mapping: {},
 };
 

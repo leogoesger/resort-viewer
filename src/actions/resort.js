@@ -9,7 +9,7 @@ const uploadResortObjects = resorts => {
 
 const getResortObject = resort => {
   return {
-    type: types.GET_RESORT_OBJECTS,
+    type: types.GET_RESORT_OBJECT,
     resort,
   };
 };

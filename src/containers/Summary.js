@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {compose, setPropTypes} from 'recompose';
 
+import {getResort} from '../actions/resort';
 import Layout from '../components/summary/Layout';
 
 class Summary extends React.PureComponent {
@@ -11,7 +12,13 @@ class Summary extends React.PureComponent {
   }
 
   render() {
-    return <Layout resorts={this.props.resorts} mapping={this.props.mapping} />;
+    return (
+      <Layout
+        resorts={this.props.resorts}
+        mapping={this.props.mapping}
+        getResort={r => this.props.getResort(r)}
+      />
+    );
   }
 }
 
@@ -22,10 +29,16 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    getResort: r => dispatch(getResort(r)),
+  };
+};
+
 const composer = compose(
   connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
   ),
   setPropTypes({resorts: PropTypes.array.isRequired})
 );

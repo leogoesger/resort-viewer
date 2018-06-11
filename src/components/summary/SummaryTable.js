@@ -7,7 +7,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 
-const SummaryTable = ({tableItems, columnNames, mapping}) => {
+import {navigateTo} from '../../utils/helpers';
+
+const _getResort = getResort => resort => {
+  navigateTo('/resort');
+  getResort(resort);
+};
+
+const SummaryTable = ({tableItems, columnNames, mapping, getResort}) => {
   return (
     <div style={{width: '80%', margin: '40px auto', overflow: 'scroll'}}>
       <Table>
@@ -23,7 +30,12 @@ const SummaryTable = ({tableItems, columnNames, mapping}) => {
         </TableHead>
         <TableBody>
           {tableItems.map(item => (
-            <TableRow hover key={item.NAME}>
+            <TableRow
+              hover
+              key={item.NAME}
+              style={{cursor: 'pointer'}}
+              onClick={() => _getResort(getResort)(item)}
+            >
               {columnNames.map(
                 (column, i) =>
                   column.toLowerCase().includes('url') ? null : (
