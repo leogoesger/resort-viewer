@@ -5,19 +5,19 @@ const AboutProject = () => (
     <h1>About this project</h1>
     <p>
       {
-        'The focus for starting this project is to learn more about functional programming by using libraries like folktale and recomopse. Therefore, some part of the application could have been done much easier without a library. Looking through the code, you will see many implementation of HOCs using Recompose for code reusebility and Folktale for managing side effects.'
+        'The focus for starting this project is to learn more about functional programming by using libraries like Folktale and Recompose. Some parts of the application could have been done much easier without a library. Looking through the code, you will see many implementations of HOCs using Recompose for code reusability and Folktale for managing side effects.'
       }
     </p>
     <h3>Completed:</h3>
     <ul>
       <li>
         {
-          'Using HOC for uploads: This will give flexibility for future different parsing algo. This can also benefit uploading other type of files like xml and etc. Since upload is considered a side effect, I used task from folktale to keep the function pure.'
+          'Using HOC for uploads: This will give flexibility in the future for different parsing algos. This can also benefit uploading other type of files like xml, etc. Since uploading is considered a side effect, I used tasks from Folktale to keep the function pure.'
         }
       </li>
       <li>
         {
-          'Mapping: This feature is rather limited currently, because user has to provide the csv with 11 fields(no more, no less). But it does provide the flexibility for user to map out their csv to expected csv.'
+          'Mapping: This feature is rather limited currently, because the user has to provide the csv with 11 fields (no more, no less). But it does provide flexibility for the user to map out their csv to the expected csv.'
         }
       </li>
       <li>
@@ -27,22 +27,22 @@ const AboutProject = () => (
       </li>
       <li>
         {
-          "Resort display: Demoing React's composition. Container -> Layout -> (components ...)"
+          "Resort display: Demoing React's composition. Container -> Layout -> (components ...)."
         }
       </li>
       <li>
         {
-          'Tests: e2e test with nightmare and jest for spec testing using Jest(matchsnapshot)'
+          'Tests: e2e test with nightmare and jest for spec testing using Jest (matchsnapshot).'
         }
       </li>
       <li>{'CI: Travis'}</li>
     </ul>
     <h3>{'Can be done:'}</h3>
     <ul>
-      <li>{'Map: Add mapbox to display all ski resorts'}</li>
+      <li>{'Map: add mapbox to display all ski resorts.'}</li>
       <li>
         {
-          'Images are loading really slow. We can clean up those images and serve compressed images. Or we can combine all logo into one image, and use css to get current logo from that image.'
+          'Images are loading really slow. We can clean up those images and serve compressed images. Or we can combine all logos into one image, and use css to get the current logo from that image.'
         }
       </li>
       <li>{'Option to upload any amount of fields.'}</li>

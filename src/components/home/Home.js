@@ -9,7 +9,7 @@ const Home = () => (
       <h1>UpMetric Resort Viewer</h1>
       <p>
         {
-          'The app takes the provided .csv, display the results in a table, and show a detailed view for each resort.'
+          'The app takes the provided .csv, displays the results in a table and shows a detailed view for each resort.'
         }
       </p>
       <p>

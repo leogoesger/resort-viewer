@@ -31,6 +31,13 @@ const updateErrorObject = error => {
 export function uploadResorts(resorts) {
   return dispatch => {
     try {
+      if (Object.keys(resorts[0]) !== 11) {
+        return dispatch(
+          updateErrorObject(
+            'Sorry, app only supports data which has exactly 11 columns!'
+          )
+        );
+      }
       dispatch(uploadResortObjects(resorts));
     } catch (e) {
       throw e;

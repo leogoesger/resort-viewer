@@ -18,13 +18,15 @@ class AttributeMap extends React.PureComponent {
   }
 
   render() {
-    if (!this.props.resorts.length) {
-      return <Error message={'Try upload some data first!'} />;
+    const {error, resorts, updateAttributeMap} = this.props;
+
+    if (!resorts.length) {
+      return <Error message={error ? error : 'Try upload some data first!'} />;
     }
     return (
       <Layout
-        uploadedAttributes={this.getUploadedAttributes(this.props.resorts)}
-        updateAttributeMap={m => this.props.updateAttributeMap(m)}
+        uploadedAttributes={this.getUploadedAttributes(resorts)}
+        updateAttributeMap={m => updateAttributeMap(m)}
       />
     );
   }
@@ -39,6 +41,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     resorts: state.resort.resorts,
+    error: state.resort.error,
   };
 };
 
